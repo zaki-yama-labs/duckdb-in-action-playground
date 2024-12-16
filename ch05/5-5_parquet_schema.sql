@@ -1,0 +1,21 @@
+FROM parquet_schema('atp/atp_rankings.parquet')
+SELECT name, type, converted_type, logical_type;
+-- ┌───────────────┬────────────┬────────────────┬──────────────┐
+-- │     name      │    type    │ converted_type │ logical_type │
+-- │    varchar    │  varchar   │    varchar     │   varchar    │
+-- ├───────────────┼────────────┼────────────────┼──────────────┤
+-- │ duckdb_schema │            │                │              │
+-- │ ranking_date  │ INT32      │ DATE           │              │
+-- │ rank          │ INT64      │ INT_64         │              │
+-- │ points        │ INT64      │ INT_64         │              │
+-- │ player_id     │ INT64      │ INT_64         │              │
+-- │ name_first    │ BYTE_ARRAY │ UTF8           │              │
+-- │ name_last     │ BYTE_ARRAY │ UTF8           │              │
+-- │ hand          │ BYTE_ARRAY │ UTF8           │              │
+-- │ dob           │ INT32      │ DATE           │              │
+-- │ ioc           │ BYTE_ARRAY │ UTF8           │              │
+-- │ height        │ INT64      │ INT_64         │              │
+-- │ name          │ BYTE_ARRAY │ UTF8           │              │
+-- ├───────────────┴────────────┴────────────────┴──────────────┤
+-- │ 12 rows                                          4 columns │
+-- └────────────────────────────────────────────────────────────┘
